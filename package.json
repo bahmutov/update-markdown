@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/bahmutov/update-markdown/issues"
   },
-  "homepage": "https://github.com/bahmutov/update-markdown#readme"
+  "homepage": "https://github.com/bahmutov/update-markdown#readme",
+  "dependencies": {
+    "check-more-types": "2.1.1",
+    "debug": "2.2.0",
+    "lazy-ass": "0.6.0"
+  }
 }
