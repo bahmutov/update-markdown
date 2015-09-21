@@ -1,0 +1,28 @@
+{
+  "name": "update-markdown",
+  "version": "1.0.0",
+  "description": "Updates part of existing markdown document",
+  "main": "index.js",
+  "bin": {
+    "um": "./bin/update-markdown.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/update-markdown.git"
+  },
+  "keywords": [
+    "markdown",
+    "md",
+    "update",
+    "cli"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/update-markdown/issues"
+  },
+  "homepage": "https://github.com/bahmutov/update-markdown#readme"
+}
