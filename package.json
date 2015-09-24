@@ -7,7 +7,8 @@
     "um": "./bin/update-markdown.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "DEBUG=um um example/input.md '## foo' example/section.md"
   },
   "repository": {
     "type": "git",
