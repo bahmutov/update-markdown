@@ -1,0 +1,7 @@
+{
+  "preset": "yandex",
+  "validateIndentation": 2,
+  "disallowMultipleVarDecl": {
+    "allExcept": ["undefined"]
+  }
+}
