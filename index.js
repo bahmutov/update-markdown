@@ -4,9 +4,21 @@ var check = require('check-more-types');
 var read = require('fs').readFileSync;
 var write = require('fs').writeFileSync;
 
+var marked = require('marked');
+var mdRenderer = require('marked-to-md');
+var renderer = mdRenderer(new marked.Renderer());
+var parser = new marked.Parser({ renderer: renderer });
+
 function updatedContent(options) {
+
   la(check.unemptyString(options.filename), 'missing filename', options);
-  var text = read(options.filename);
+  var text = read(options.filename, 'utf-8');
+  la(check.unemptyString(text), 'empty text in file', options.filename, text);
+
+  var tokens = marked.lexer(text);
+  log('read file %s and split into %d markdown tokens',
+    options.filename, tokens.length);
+
   return text;
 }
 

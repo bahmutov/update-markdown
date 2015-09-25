@@ -34,7 +34,9 @@
   "dependencies": {
     "check-more-types": "2.1.1",
     "debug": "2.2.0",
-    "lazy-ass": "0.6.0"
+    "lazy-ass": "0.6.0",
+    "marked": "0.3.5",
+    "marked-to-md": "1.0.1"
   },
   "devDependencies": {
     "jscs": "2.1.1",
