@@ -35,7 +35,7 @@ You can also specify new content from another markdown file, same command as abo
 um filename.md "## foo" new.md
 ```
 Want to see it in action? Check out the list of 3rd party modules below - we are generating it using
-the build script in the [package.json](package.json).
+the [modules-used](https://github.com/bahmutov/modules-used) tool in build script in the [package.json](package.json).
 
 ```json
 "scripts": {
