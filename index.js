@@ -7,7 +7,7 @@ var write = require('fs').writeFileSync;
 var marked = require('marked');
 var mdRenderer = require('marked-to-md');
 var renderer = mdRenderer(new marked.Renderer());
-var parser = new marked.Parser({ renderer: renderer });
+var parser = new marked.Parser({renderer: renderer});
 
 function updatedContent(options) {
 
@@ -18,6 +18,8 @@ function updatedContent(options) {
   var tokens = marked.lexer(text);
   log('read file %s and split into %d markdown tokens',
     options.filename, tokens.length);
+
+  console.log(tokens);
 
   return text;
 }
