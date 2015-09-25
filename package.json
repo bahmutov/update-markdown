@@ -15,7 +15,9 @@
   },
   "pre-commit": [
     "npm run style",
-    "npm run example"
+    "npm run example",
+    "npm run cat-example",
+    "npm run 3rd-party"
   ],
   "repository": {
     "type": "git",
