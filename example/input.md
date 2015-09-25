@@ -1,6 +1,10 @@
 # title
 some text
+
 ## foo
-this is foo
+new content
+is here
+
 ## bar
 this is bar
+

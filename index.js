@@ -84,12 +84,16 @@ function updatedContent(options) {
   log('read file %s and split into %d markdown tokens',
     options.filename, tokens.length);
 
-  console.log(tokens);
+  var updatedTokens = replaceSection(tokens, options.title, options.text);
+  la(check.array(updatedTokens), 'could not update tokens', updatedTokens);
 
-  return text;
+  var updatedText = parser.parse(updatedTokens);
+  return updatedText;
 }
 
 function updateMarkdown(options) {
+  log('update markdown options', options);
+
   options = options || {};
   la(check.unemptyString(options.filename), 'missing filename', options);
   var updatedText = updatedContent(options);

@@ -21,7 +21,7 @@ function getCliOptions(argv) {
       return {
         filename: process.argv[2],
         title: process.argv[3],
-        text: read(process.argv[4])
+        text: read(process.argv[4], 'utf-8')
       };
     break;
     default:
