@@ -93,11 +93,11 @@ function updatedContent(options) {
 
 function updateMarkdown(options) {
   log('update markdown options', options);
+  la(check.object(options), 'missing options', options);
 
-  options = options || {};
-  la(check.unemptyString(options.filename), 'missing filename', options);
   var updatedText = updatedContent(options);
   log('writing updatedText markdown to %s', options.filename);
+
   write(options.filename, updatedText);
   return updatedText;
 }

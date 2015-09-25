@@ -26,6 +26,10 @@ updating the `filename.md` to have
     ## bar
     this is bar
 
+You can also specify new content from another markdown file, same command as above will be
+
+    um filename.md "## foo" new.md
+
 [![update-markdown-icon] [update-markdown-icon]][update-markdown-icon]
 
 [![Build status][update-markdown-ci-image] ][update-markdown-ci-url]
