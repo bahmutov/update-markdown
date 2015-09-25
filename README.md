@@ -34,7 +34,6 @@ You can also specify new content from another markdown file, same command as abo
 ```
 um filename.md "## foo" new.md
 ```
-
 Want to see it in action? Check out the list of 3rd party modules below - we are generating it using
 the build script in the [package.json](package.json).
 
@@ -43,7 +42,6 @@ the build script in the [package.json](package.json).
   "3rd-party": "modules-used | um README.md '### 3rd party modules'"
 }
 ```
-
 [![update-markdown-icon](https://nodei.co/npm/update-markdown.png?downloads=true)](https://nodei.co/npm/update-markdown.png?downloads=true)
 
 [![Build status](https://travis-ci.org/bahmutov/update-markdown.svg?branch=master) ](https://travis-ci.org/bahmutov/update-markdown)
