@@ -10,7 +10,8 @@
     "test": "mocha spec/*-spec.js",
     "style": "jscs *.js --fix",
     "example": "DEBUG=um um example/input.md '## foo' example/section.md",
-    "cat-example": "cat example/section.md | DEBUG=um um example/input.md '## foo'"
+    "cat-example": "cat example/section.md | DEBUG=um um example/input.md '## foo'",
+    "3rd-party": "modules-used | um README.md '### 3rd party modules'"
   },
   "pre-commit": [
     "npm run style",
@@ -46,6 +47,7 @@
     "describe-it": "1.4.0",
     "jscs": "2.1.1",
     "mocha": "2.3.3",
+    "modules-used": "1.1.0",
     "pre-git": "0.6.2"
   }
 }

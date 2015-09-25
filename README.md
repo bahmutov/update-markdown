@@ -36,6 +36,8 @@ You can also specify new content from another markdown file, same command as abo
 [![dependencies][update-markdown-dependencies-image] ][update-markdown-dependencies-url]
 [![devdependencies][update-markdown-devdependencies-image] ][update-markdown-devdependencies-url]
 
+### 3rd party modules
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
