@@ -17,7 +17,8 @@
     "npm run style",
     "npm run example",
     "npm run cat-example",
-    "npm run 3rd-party"
+    "npm run 3rd-party",
+    "npm version"
   ],
   "repository": {
     "type": "git",
