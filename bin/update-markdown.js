@@ -41,7 +41,7 @@ function getNewText(options) {
   }
 
   log('reading new contents from STDIN');
-  return require('get-stdin-promise');
+  return Promise.resolve(require('get-stdin-promise'));
 }
 
 var options = getCliOptions(process.argv);
@@ -51,4 +51,5 @@ getNewText(options)
   .then(function (text) {
     options.text = text;
     updateMarkdown(options);
-  });
+  })
+  .done();
