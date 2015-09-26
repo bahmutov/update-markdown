@@ -50,14 +50,14 @@ the [modules-used](https://github.com/bahmutov/modules-used) tool in build scrip
 
 ### 3rd party modules
 
-- bluebird - Full featured Promises/A+ implementation with exceptionally good performance
-- check-more-types - Large collection of predicates
-- debug - small debugging utility
-- get-stdin-promise - Return stdin as a promise
-- lazy-ass - Lazy assertions without performance penalty
-- lodash - The modern build of lodash modular utilities.
-- marked - A markdown parser built for speed
-- marked-to-md - Markdown renderer for marked
+- [bluebird](https://github.com/petkaantonov/bluebird) - Full featured Promises/A+ implementation with exceptionally good performance
+- [check-more-types](https://github.com/kensho/check-more-types) - Large collection of predicates
+- [debug](https://github.com/visionmedia/debug) - small debugging utility
+- [get-stdin-promise](https://github.com/metaraine/get-stdin-promise) - Return stdin as a promise
+- [lazy-ass](https://github.com/bahmutov/lazy-ass) - Lazy assertions without performance penalty
+- [lodash](https://lodash.com/) - The modern build of lodash modular utilities.
+- [marked](https://github.com/chjj/marked) - A markdown parser built for speed
+- [marked-to-md](https://github.com/partageit/marked-to-md) - Markdown renderer for marked
 
 ### Small print
 Author: Gleb Bahmutov &copy; 2015

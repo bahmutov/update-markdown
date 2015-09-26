@@ -50,7 +50,7 @@
     "describe-it": "1.4.0",
     "jscs": "2.1.1",
     "mocha": "2.3.3",
-    "modules-used": "1.1.0",
+    "modules-used": "1.2.0",
     "pre-git": "0.6.2"
   }
 }
