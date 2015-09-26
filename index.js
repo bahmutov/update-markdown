@@ -18,6 +18,10 @@ function headerText(text) {
   return tokens[0].text;
 }
 
+function isHeading(token) {
+  return token && token.type === 'heading';
+}
+
 // returns indices, both could be -1 or the end could be -1
 function findSection(tokens, heading) {
   var text = headerText(heading);
@@ -27,7 +31,7 @@ function findSection(tokens, heading) {
   if (headerIndex === -1) {
     throw new Error('Could not find header text ' + heading);
   }
-  var stopIndex = _.findIndex(tokens.slice(headerIndex + 1), {type: 'heading'});
+  var stopIndex = _.findIndex(tokens.slice(headerIndex + 1), isHeading);
   if (stopIndex !== -1) {
     stopIndex = headerIndex + 1 + stopIndex;
   }
@@ -56,7 +60,9 @@ function updateTokens(tokens, newText, indices) {
   var newTokens = marked.lexer(newText);
   if (hasNoEnd(indices)) {
     tokens.splice(indices.from, tokens.length);
-    return tokens.concat(newTokens);
+    var links = tokens.links;
+    tokens = tokens.concat(newTokens);
+    tokens.links = links;
   } else {
     la(indices.to >= indices.from, 'invalid indices', indices);
     tokens.splice.apply(tokens,
