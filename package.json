@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha spec/*-spec.js",
-    "style": "jscs *.js --fix",
+    "style": "jscs *.js bin/*.js spec/*.js --fix",
     "example": "DEBUG=um um example/input.md '## foo' example/section.md",
     "cat-example": "cat example/section.md | DEBUG=um um example/input.md '## foo'",
     "3rd-party": "modules-used | um README.md '### 3rd party modules'"

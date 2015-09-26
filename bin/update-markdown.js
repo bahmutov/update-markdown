@@ -8,7 +8,7 @@ function getCliOptions(argv) {
   switch (argv.length) {
     case 2:
       console.error('um <filename.md> <section header>');
-      console.error('for example: um some-file.md "## foo"')
+      console.error('for example: um some-file.md "## foo"');
       console.error('updates section with title "## foo" inside file "some-filemd"');
       process.exit(-1);
     break;

@@ -31,12 +31,12 @@ describeIt(filename, 'replaceSection(tokens, heading, newText)', function (codeE
     replaceSection = codeExtract();
     la(check.fn(replaceSection));
     tokens = [
-      { type: 'heading', depth: 1, text: 'title' },
-      { type: 'paragraph', text: 'some text' },
-      { type: 'heading', depth: 2, text: 'foo' },
-      { type: 'paragraph', text: 'this is foo' },
-      { type: 'heading', depth: 2, text: 'bar' },
-      { type: 'paragraph', text: 'this is bar' },
+      {type: 'heading', depth: 1, text: 'title'},
+      {type: 'paragraph', text: 'some text'},
+      {type: 'heading', depth: 2, text: 'foo'},
+      {type: 'paragraph', text: 'this is foo'},
+      {type: 'heading', depth: 2, text: 'bar'},
+      {type: 'paragraph', text: 'this is bar'},
     ];
   });
 
