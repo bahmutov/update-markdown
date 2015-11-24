@@ -8,23 +8,42 @@ var filename = join(__dirname, '..', 'index.js');
 
 describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', function () {
 
-  var source = ['# foo',
-    'this is a section',
-    '# bar',
-    'another section'
-  ].join('\n');
-
-  var replacement = 'replaced second section';
-
   it('is a function', function () {
     la(check.fn(this.updateMarkdownWith));
   });
 
-  it('updates a section of markdown text', function () {
-    var updated = this.updateMarkdownWith('bar', source, replacement);
-    la(check.unemptyString(updated));
-    la(updated.indexOf('another') === -1, 'removed second section', updated);
-    la(updated.indexOf('replaced'), 'found new text', updated);
+  describe('without links', function () {
+    var source = ['# foo',
+      'this is a section',
+      '# bar',
+      'another section'
+    ].join('\n');
+
+    var replacement = 'replaced second section';
+
+    it('updates a section of markdown text', function () {
+      var updated = this.updateMarkdownWith('bar', source, replacement);
+      la(check.unemptyString(updated));
+      la(updated.indexOf('another') === -1, 'removed second section', updated);
+      la(updated.indexOf('replaced'), 'found new text', updated);
+    });
+  });
+
+  describe('with links', function () {
+    var source = ['# foo',
+      'this is a section',
+      '# bar',
+      'another section'
+    ].join('\n');
+
+    var replacement = 'replaced [second](https://github.com) section';
+
+    it('updates a section of markdown text', function () {
+      var updated = this.updateMarkdownWith('bar', source, replacement);
+      la(check.unemptyString(updated));
+      la(updated.indexOf('another') === -1, 'removed second section', updated);
+      la(updated.indexOf('replaced'), 'found new text', updated);
+    });
   });
 });
 
