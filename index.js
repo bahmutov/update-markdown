@@ -55,19 +55,18 @@ function updateTokens(tokens, newText, indices) {
   la(check.object(indices), 'missing indices');
   la(hasStart(indices), 'no start index', indices);
 
-  // TODO preserve links, are we loosing them?
-
   var newTokens = marked.lexer(newText);
+  var links = _.assign({}, tokens.links, newTokens.links);
+
   if (hasNoEnd(indices)) {
     tokens.splice(indices.from, tokens.length);
-    var links = tokens.links;
     tokens = tokens.concat(newTokens);
-    tokens.links = links;
   } else {
     la(indices.to >= indices.from, 'invalid indices', indices);
     tokens.splice.apply(tokens,
       [indices.from, indices.to - indices.from].concat(newTokens));
   }
+  tokens.links = links;
 
   return tokens;
 }

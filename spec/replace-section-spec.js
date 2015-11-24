@@ -53,6 +53,35 @@ describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', fun
       la(updated.indexOf('github.com') > 0, 'found new link', updated);
     });
   });
+
+  describe('with separate links', function () {
+    var source = ['# foo',
+      'this is a section',
+      '# bar',
+      'another section'
+    ].join('\n');
+
+    var replacement = ['replaced [second][second] section',
+      '',
+      '[second]: https://github.com'
+    ].join('\n');
+
+    it('updates a section of markdown text', function () {
+      var updated = this.updateMarkdownWith('bar', source, replacement);
+      la(check.unemptyString(updated));
+      la(updated.indexOf('another') === -1, 'removed second section', updated);
+      la(updated.indexOf('replaced') > 0, 'found new text', updated);
+      la(updated.indexOf('second') > 0, 'found new link title', updated);
+    });
+
+    it('brings links from new text', function () {
+      la(source.indexOf('github.com') === -1,
+        'source does not have this link at first', source);
+
+      var updated = this.updateMarkdownWith('bar', source, replacement);
+      la(updated.indexOf('github.com') > 0, 'found new link\n' + updated);
+    });
+  });
 });
 
 describeIt(filename, 'headerText(text)', function (codeExtract) {
