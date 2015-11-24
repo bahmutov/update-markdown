@@ -8,7 +8,6 @@
 [![devdependencies](https://david-dm.org/bahmutov/update-markdown/dev-status.svg) ](https://david-dm.org/bahmutov/update-markdown#info=devDependencies)
 
 ## install and use
-
 ```
 npm install -g update-markdown
 ```
@@ -50,7 +49,6 @@ the [modules-used](https://github.com/bahmutov/modules-used) tool in build scrip
   "3rd-party": "modules-used | um README.md '### 3rd party modules'"
 }
 ```
-
 ### 3rd party modules
 
 - [bluebird](https://github.com/petkaantonov/bluebird) - Full featured Promises/A+ implementation with exceptionally good performance
