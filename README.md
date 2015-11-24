@@ -1,6 +1,14 @@
 # update-markdown
 > Updates part of existing markdown document
 
+[![update-markdown-icon](https://nodei.co/npm/update-markdown.png?downloads=true)](https://nodei.co/npm/update-markdown.png?downloads=true)
+
+[![Build status](https://travis-ci.org/bahmutov/update-markdown.svg?branch=master) ](https://travis-ci.org/bahmutov/update-markdown)
+[![dependencies](https://david-dm.org/bahmutov/update-markdown.svg) ](https://david-dm.org/bahmutov/update-markdown)
+[![devdependencies](https://david-dm.org/bahmutov/update-markdown/dev-status.svg) ](https://david-dm.org/bahmutov/update-markdown#info=devDependencies)
+
+## install and use
+
 ```
 npm install -g update-markdown
 ```
@@ -42,11 +50,6 @@ the [modules-used](https://github.com/bahmutov/modules-used) tool in build scrip
   "3rd-party": "modules-used | um README.md '### 3rd party modules'"
 }
 ```
-[![update-markdown-icon](https://nodei.co/npm/update-markdown.png?downloads=true)](https://nodei.co/npm/update-markdown.png?downloads=true)
-
-[![Build status](https://travis-ci.org/bahmutov/update-markdown.svg?branch=master) ](https://travis-ci.org/bahmutov/update-markdown)
-[![dependencies](https://david-dm.org/bahmutov/update-markdown.svg) ](https://david-dm.org/bahmutov/update-markdown)
-[![devdependencies](https://david-dm.org/bahmutov/update-markdown/dev-status.svg) ](https://david-dm.org/bahmutov/update-markdown#info=devDependencies)
 
 ### 3rd party modules
 
