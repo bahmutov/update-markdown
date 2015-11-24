@@ -4,32 +4,32 @@ var log = require('debug')('um');
 var Promise = require('bluebird');
 var updateMarkdown = require('..');
 
+/* eslint no-console:0 */
+
 function getCliOptions(argv) {
   switch (argv.length) {
-    case 2:
-      console.error('um <filename.md> <section header>');
-      console.error('for example: um some-file.md "## foo"');
-      console.error('updates section with title "## foo" inside file "some-filemd"');
-      process.exit(-1);
+  case 2:
+    console.error('um <filename.md> <section header>');
+    console.error('for example: um some-file.md "## foo"');
+    console.error('updates section with title "## foo" inside file "some-filemd"');
+    process.exit(-1);
     break;
-    case 4:
-      // text comes from STDIN
-      return {
-        filename: process.argv[2],
-        title: process.argv[3]
-      };
-    break;
-    case 5:
-      return {
-        filename: process.argv[2],
-        title: process.argv[3],
-        textFilename: process.argv[4]
-      };
-    break;
-    default:
-      console.error('Do not know how to handle arguments');
-      console.error(argv.slice(2));
-      process.exit(-1);
+  case 4:
+    // text comes from STDIN
+    return {
+      filename: process.argv[2],
+      title: process.argv[3]
+    };
+  case 5:
+    return {
+      filename: process.argv[2],
+      title: process.argv[3],
+      textFilename: process.argv[4]
+    };
+  default:
+    console.error('Do not know how to handle arguments');
+    console.error(argv.slice(2));
+    process.exit(-1);
   }
 }
 

@@ -6,6 +6,7 @@ var join = require('path').join;
 
 var filename = join(__dirname, '..', 'index.js');
 
+/* global describe, it, beforeEach */
 describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', function () {
 
   it('is a function', function () {
@@ -115,7 +116,7 @@ describeIt(filename, 'replaceSection(tokens, heading, newText)', function (codeE
       {type: 'heading', depth: 2, text: 'foo'},
       {type: 'paragraph', text: 'this is foo'},
       {type: 'heading', depth: 2, text: 'bar'},
-      {type: 'paragraph', text: 'this is bar'},
+      {type: 'paragraph', text: 'this is bar'}
     ];
   });
 
