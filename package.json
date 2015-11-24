@@ -16,8 +16,14 @@
     "next-update": "next-update -k true",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
-    "lint": "eslint bin/*.js index.js spec/*.js"
+    "lint": "eslint bin/*.js index.js spec/*.js",
+    "pkgfiles": "pkgfiles",
+    "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";"
   },
+  "files": [
+    "bin",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bahmutov/update-markdown.git"
@@ -52,6 +58,7 @@
     "mocha": "2.3.4",
     "modules-used": "1.2.0",
     "next-update": "0.9.5",
+    "pkgfiles": "2.3.0",
     "pre-git": "1.3.1"
   },
   "config": {
@@ -64,7 +71,10 @@
         "npm run cat-example",
         "npm run 3rd-party"
       ],
-      "pre-push": [],
+      "pre-push": [
+        "npm run size",
+        "npm run pkgfiles"
+      ],
       "post-commit": [
         "npm version"
       ],
