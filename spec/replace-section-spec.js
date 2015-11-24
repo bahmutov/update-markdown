@@ -2,8 +2,31 @@ var la = require('lazy-ass');
 var check = require('check-more-types');
 var describeIt = require('describe-it');
 var _ = require('lodash');
+var join = require('path').join;
 
-var filename = __dirname + '/../index.js';
+var filename = join(__dirname, '..', 'index.js');
+
+describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', function () {
+
+  var source = ['# foo',
+    'this is a section',
+    '# bar',
+    'another section'
+  ].join('\n');
+
+  var replacement = 'replaced second section';
+
+  it('is a function', function () {
+    la(check.fn(this.updateMarkdownWith));
+  });
+
+  it('updates a section of markdown text', function () {
+    var updated = this.updateMarkdownWith('bar', source, replacement);
+    la(check.unemptyString(updated));
+    la(updated.indexOf('another') === -1, 'removed second section', updated);
+    la(updated.indexOf('replaced'), 'found new text', updated);
+  });
+});
 
 describeIt(filename, 'headerText(text)', function (codeExtract) {
   var headerText;

@@ -80,20 +80,29 @@ function replaceSection(tokens, heading, newText) {
   return updateTokens(tokens, newText, indices);
 }
 
+function updateMarkdownWith(title, markdownText, replacement) {
+  la(check.unemptyString(title), 'missing section title');
+  la(check.unemptyString(markdownText), 'missing markdown text');
+  la(check.unemptyString(replacement), 'missing replacement text', replacement);
+
+  var tokens = marked.lexer(markdownText);
+  log('split source markdown into %d tokens', tokens.length);
+
+  var updatedTokens = replaceSection(tokens, title, replacement);
+  la(check.array(updatedTokens), 'could not update tokens', updatedTokens);
+
+  var updatedText = parser.parse(updatedTokens);
+  return updatedText;
+}
+
 function updatedContent(options) {
 
   la(check.unemptyString(options.filename), 'missing filename', options);
   var text = read(options.filename, 'utf-8');
   la(check.unemptyString(text), 'empty text in file', options.filename, text);
+  log('read file %s', options.filename);
 
-  var tokens = marked.lexer(text);
-  log('read file %s and split into %d markdown tokens',
-    options.filename, tokens.length);
-
-  var updatedTokens = replaceSection(tokens, options.title, options.text);
-  la(check.array(updatedTokens), 'could not update tokens', updatedTokens);
-
-  var updatedText = parser.parse(updatedTokens);
+  var updatedText = updateMarkdownWith(options.title, text, options.text);
   return updatedText;
 }
 
