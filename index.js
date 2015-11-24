@@ -1,5 +1,5 @@
 var log = require('debug')('um');
-require('lazy-ass');
+var la = require('lazy-ass');
 var check = require('check-more-types');
 var read = require('fs').readFileSync;
 var write = require('fs').writeFileSync;
