@@ -25,11 +25,11 @@ describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', fun
       var updated = this.updateMarkdownWith('bar', source, replacement);
       la(check.unemptyString(updated));
       la(updated.indexOf('another') === -1, 'removed second section', updated);
-      la(updated.indexOf('replaced'), 'found new text', updated);
+      la(updated.indexOf('replaced') > 0, 'found new text', updated);
     });
   });
 
-  describe('with links', function () {
+  describe('with inlined links', function () {
     var source = ['# foo',
       'this is a section',
       '# bar',
@@ -42,7 +42,15 @@ describeIt(filename, 'updateMarkdownWith(title, markdownText, replacement)', fun
       var updated = this.updateMarkdownWith('bar', source, replacement);
       la(check.unemptyString(updated));
       la(updated.indexOf('another') === -1, 'removed second section', updated);
-      la(updated.indexOf('replaced'), 'found new text', updated);
+      la(updated.indexOf('replaced') > 0, 'found new text', updated);
+    });
+
+    it('brings links from new text', function () {
+      la(source.indexOf('github.com') === -1,
+        'source does not have this link at first', source);
+
+      var updated = this.updateMarkdownWith('bar', source, replacement);
+      la(updated.indexOf('github.com') > 0, 'found new link', updated);
     });
   });
 });
